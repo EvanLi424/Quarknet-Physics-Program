@@ -84,20 +84,7 @@ p4mu2[:, 1] = data.px2
 p4mu2[:, 2] = data.py2
 p4mu2[:, 3] = data.pz2
 
-"""Before analyzing data, physicists inspect each variable's spectrum. In this 
 
----
-
-
-
-data set there are 12 variables. Use subplot to plot the spectrum of all 12 
-
----
-
-variables in one figure.
-
----
-"""
 
 # create and display diagnostic histograms
 fig = plt.figure(1, figsize=[12,10])
@@ -169,10 +156,6 @@ plt.hist(p4mu1[:, 0], xE)
 plt.xlabel('E1 (GeV)')
 """
 
-"""![alt text](https://)Use the energy and momentum of the dimuon system to determine the energy and momentum of the J/Psi candidates. What conservation laws are you using?
-
-> Indented block
-"""
 
 # calculate Esys, P3sys, Psys (magnitude of 3 momentum) and Msys
 
@@ -212,13 +195,6 @@ print(Psys)
 print('-'*50)
 print(Msys)
 
-"""Create 4 mass plots: All pairs, oppositely charged pairs, oppositely charged pairs with no tracker muons and oppositely charged pairs with 2 global muons.
-
-> Indented block
-
-*   List item
-*   List item
-"""
 
 # select events based on the charge and muon quality
 for ie in range(0, n_evt):
@@ -263,8 +239,6 @@ plt.xlabel('opp q pairs w/GG')
 # histogram mass plots with muon charge and muon quality selections (cuts)
 #fig = plt.figure(3)
 #fig.suptitle('Figure #3: Muon Charge and Quality Cuts in Lab Frame')
-
-"""So far the energy and momentum values have been in the lab frame. Now, we want to transform the energy and momentum of each muon to the rest frame of theJ/Psi candidate."""
 
 # TRANSFORM to REST FRAME of CANDIDATE J/Psi
 
@@ -419,8 +393,3 @@ plt.xlabel('opp q pairs w/TT')
 plt.subplot(2, 2, 4)
 plt.hist(M_opp_GG, np.linspace(1, 5, num=200))
 plt.xlabel('opp q pairs w/GG')
-
-"""Duplicate calculations and histograms in J/Psi candidate rest frame.   
-
-Hint: Copy the appropriate code from above and make the needed adjustments. You will be creating figures 4, 5 and 6 in the rest frame of the J/Psi candidates.
-"""
